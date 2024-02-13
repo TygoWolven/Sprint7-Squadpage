@@ -1,0 +1,108 @@
+/* === Fonts === */
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+/* === Custom Properties === */
+:root {
+    /* === Regular Colors === */
+    --light-grey: rgb(200, 200, 200);
+    --medium-grey: rgb(100, 100, 100);
+    --dark-grey: rgb(15, 15, 15);
+    --white: rgb(250, 250, 250);
+
+    /* === Border Stylings === */
+    --border: 1px solid; 
+    --round: 500px;
+
+    /* === Transitions === */
+    --tran1: 0.5s ease;
+}
+
+/* === General Page Styling === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    font-family: Montserrat;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 500;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* === Body Styling === */
+body {
+    background: var(--light-grey);
+}
+
+/* === Header Styling === */
+header {
+    position: fixed;
+    width: 60%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    padding: 1em;
+    margin: 1em auto;
+    display: flex;
+
+    justify-content: space-between;
+    border: var(--border) transparent; 
+    border-radius: var(--round);
+    transition: var(--tran1);
+
+    /* === General Styling in Header === */
+    & div {
+        display: flex;
+    }
+
+    & a {
+        position: relative;
+        color: var(--dark-grey);
+        transition: var(--tran1);
+        text-transform: uppercase;
+        font-weight: 900;
+        margin: 0 1em;
+    }
+
+    & a:before {
+        position: absolute;
+        content: '';
+        left: -5%;
+        bottom: -3px;
+
+        width: 0;
+        height: 7.5%;
+
+        background: var(--dark-grey);
+        transition: var(--tran1);
+    }
+
+    & a:hover:before {
+        width: 110%;
+    }
+}
+
+/* === Header Class when scrolled === */
+header.active {
+    backdrop-filter: blur(12px);
+    background: rgba(5, 5, 5, 0.4);
+    border: var(--border) rgba(250, 250, 250, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(5, 5, 5, 0.3);
+
+    & a {
+        color: var(--white);
+    }
+
+    & a:before {
+        background: var(--white);
+    }
+}
