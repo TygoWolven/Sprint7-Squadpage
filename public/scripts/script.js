@@ -8,9 +8,17 @@ window.onscroll = function () {
   }
 }
 
-const filterButton = document.querySelector('#filter-button')
-const userFilters = document.querySelector('.user-filters')
-filterButton.addEventListener('click', showFilters)
-function showFilters () {
-  userFilters.classList.toggle('showfilters')
+// Filter Menu //
+const menuButton = document.querySelector('#menu-button')
+const menu = document.querySelector('.menu')
+menuButton.addEventListener('click', showMenu)
+function showMenu () {
+  menu.classList.toggle('showmenu')
 }
+
+// Cursor Light //
+const positionCursor = document.documentElement;
+positionCursor.addEventListener('mousemove', e =>{
+  positionCursor.style.setProperty('--x', e.clientX + 'px')
+  positionCursor.style.setProperty('--y', e.clientY + 'px')
+})

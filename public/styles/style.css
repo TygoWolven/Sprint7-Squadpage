@@ -42,28 +42,45 @@ body {
     background: var(--light-grey);
 }
 
-/* === Filter Styling === */
-.filters {
-    text-transform: uppercase;
+/* === Menu Styling === */
+.system {
+    display: flex;
 
-    & a {
-        color: white;
+    & div {
+        margin: 3em;
     }
 }
 
-#filter-button {
+#menu-button {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+
+    margin: 0 auto;
     padding: 8px 16px;
+    width: fit-content;
+    z-index: 100;
+
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+
     backdrop-filter: blur(12px);
     background: rgba(5, 5, 5, 0.4);
     border: var(--border) rgba(250, 250, 250, 0.2);
     box-shadow: 0 8px 32px 0 rgba(5, 5, 5, 0.3);
+    border-radius: var(--round);
 }
 
-.user-filters {
-    display: none;
+.menu {
+    display: flex;
+    transform: translateY(-100%);
+    transition: var(--tran1);
 
     width: 100%;
     height: 100%;
+    z-index: 50;
 
     position: absolute;
     backdrop-filter: blur(12px);
@@ -73,8 +90,20 @@ body {
     align-items: center;
     justify-content: center;
 
+    & h2 {
+        color: white;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
     & ul li {
         margin: 1.5em;
+    }
+
+    & ul li a {
+        color: white;
+        font-weight: 900;
+        text-transform: uppercase;
     }
 
     & hr {
@@ -82,19 +111,38 @@ body {
     }
 }
 
-.showfilters {
-    display: flex;
+.showmenu {
+    transform: translateY(0);
 }
 
 /* === Main Content Styling === */
 h1 {
     position: absolute;
+    top: 60px;
     left: 0;
     right: 0;
-    margin: 1em auto;
+    margin: 0 auto;
+
     text-align: center;
     text-transform: uppercase;
 
     font-weight: 900;
     font-size: 4em;
+}
+
+/* === Light Source over Page === */
+.light {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    background: radial-gradient( 
+        circle at var(--x) var(--y),
+        transparent -10%,
+        rgba(0,0,0,0.9) 40%
+    );
 }
