@@ -7,3 +7,10 @@ window.onscroll = function () {
     header.classList.remove('active')
   }
 }
+
+const filterButton = document.querySelector('#filter-button')
+const userFilters = document.querySelector('.user-filters')
+filterButton.addEventListener('click', showFilters)
+function showFilters () {
+  userFilters.classList.toggle('showfilters')
+}
