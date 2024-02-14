@@ -24,8 +24,12 @@ app.use(express.static('public'))
 
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
+  let sortBy = ''
+  if(request.param('sort')) {
+    sortBy = `/?sort=${request.param('sort')}`
+  }
   // Haal alle personen uit de WHOIS API op
-  fetchJson(apiUrl + '/person').then((apiData) => {
+  fetchJson(apiUrl + '/person' + sortBy).then((apiData) => {
     // apiData bevat gegevens van alle personen uit alle squads
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
 
