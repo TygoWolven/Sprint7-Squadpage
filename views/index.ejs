@@ -6,11 +6,11 @@
   <h2>Studenten</h2>
   <ul class="student-list">
     <% persons.forEach(person => { %>
-      <li class="students"><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
+      <li class="students"><a href="./person/<%= person.id %>"><%= person.name %> <%= person.surname %></a></li>
     <% }) %>
   </ul>
 </section>
 
-<!-- <div class="light"></div> -->
+<div class="light"></div>
 
 <%- include('./partials/foot') %>
