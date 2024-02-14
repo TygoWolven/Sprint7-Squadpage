@@ -16,6 +16,19 @@ function showMenu () {
   menu.classList.toggle('showmenu')
 }
 
+// Lightswitch Start Animation //
+const startPage = document.querySelector('.start-page'),
+      lightSwitch = document.querySelector('.button-before')
+lightSwitch.addEventListener('click', startAnimation)
+function startAnimation () {
+  lightSwitch.classList.toggle('toggleSwitchAnimation')
+  setTimeout(startDissapearing, 500)
+  startDissapearing
+}
+function startDissapearing () {
+  startPage.classList.toggle('hideStartPageAnimation')
+}
+
 // Cursor Light //
 const positionCursor = document.documentElement;
 positionCursor.addEventListener('mousemove', e =>{
