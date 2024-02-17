@@ -29,7 +29,7 @@ function startDissapearing () {
   startPage.classList.toggle('hideStartPageAnimation')
 }
 
-// Cursor Light //
+// // Cursor Light //
 const positionCursor = document.documentElement;
 positionCursor.addEventListener('mousemove', e =>{
   positionCursor.style.setProperty('--x', e.clientX + 'px')
