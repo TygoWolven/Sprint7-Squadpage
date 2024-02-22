@@ -177,6 +177,11 @@ body {
     border: var(--border) rgba(250, 250, 250, 0.2);
     box-shadow: 0 8px 32px 0 rgba(5, 5, 5, 0.3);
     border-radius: var(--round);
+    transition: var(--tran1);
+}
+
+#menu-button:hover {
+    box-shadow: 0 0 100px 5px rgba(250, 250, 250, 0.75);
 }
 
 .menu {
@@ -210,6 +215,7 @@ body {
         color: white;
         font-weight: 900;
         text-transform: uppercase;
+        transition: var(--tran1);
     }
 
     & hr {
