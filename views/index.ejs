@@ -1,7 +1,7 @@
 <%- include('./partials/head') %>
 
 <div class="start-page">
-  <h2 id="start-page-title">Hey! Ik zie niks!<br>Doe het licht aan!</h2>
+  <h2 id="start-page-title">Laten we naar<br>de ruimte gaan!</h2>
   <div class="switch">
     <div class="button">
       <div class="button-before">
@@ -15,7 +15,8 @@
 
   <ul class="student-list">
     <% persons.forEach(person => { %>
-      <li class="students"><a href="./person/<%= person.id %>"><%= person.name %> <%= person.surname %></a></li>
+      <li class="students"><a href="./person/<%= person.id %>"><%= person.name %> <%= person.surname %>
+      </a></li>
     <% }) %>
   </ul>
 </section>
