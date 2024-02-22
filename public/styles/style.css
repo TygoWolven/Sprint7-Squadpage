@@ -18,6 +18,7 @@
 
     /* === Transitions === */
     --tran1: 0.5s ease;
+    --tran2: 1s ease;
 }
 
 /* === General Page Styling === */
@@ -52,8 +53,10 @@ body {
     height: 100vh;
     z-index: 150;
 
+    display: flex;
     text-align: center;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 
     transition: var(--tran1);
     background: var(--dark-grey);
@@ -66,17 +69,35 @@ body {
     }
 
     & p {
-        color: var(--white);
+        color: red;
+        background: darkred;
+        width: fit-content;
+
         text-transform: uppercase;
         font-weight: 900;
         font-size: 1.5em;
-        margin-top: 3em;
-        margin-bottom: 1.5em;
+
+        padding: 10px 16px;
+        margin: 2em auto;
+    
+        border: var(--border) red;
+        border-radius: var(--round);
+        transition: var(--tran1);
+        cursor: pointer;
+    }
+
+    & p:hover {
+        box-shadow: 0 0 100px 5px red;
     }
 
     & img {
         width: 200px;
+        transition: var(--tran2);
     }
+}
+
+.launchRocket {
+    transform: translateY(-50em);
 }
 
 /* === Animation for removing Startpage === */

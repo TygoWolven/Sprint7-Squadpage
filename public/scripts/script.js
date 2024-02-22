@@ -18,11 +18,13 @@ function showMenu () {
 
 // Lightswitch Start Animation //
 const startPage = document.querySelector('.start-page'),
-      lightSwitch = document.querySelector('.button-before')
-lightSwitch.addEventListener('click', startAnimation)
+      launchButton = document.querySelector('#launch-button'),
+      spaceRocket = document.querySelector('.start-page img')
+launchButton.addEventListener('click', startAnimation)
 function startAnimation () {
-  lightSwitch.classList.toggle('toggleSwitchAnimation')
-  setTimeout(startDissapearing, 500)
+  spaceRocket.classList.toggle('launchRocket')
+  spaceRocket.src = ("/images/rocket-flame.webp")
+  setTimeout(startDissapearing, 750)
   startDissapearing
 }
 function startDissapearing () {
