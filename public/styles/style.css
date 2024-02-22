@@ -39,7 +39,7 @@
 
 /* === Body Styling === */
 body {
-    background: var(--light-grey);
+    background: var(--dark-grey);
 }
 
 /* === Starting the Page === */
@@ -136,6 +136,29 @@ body {
     font-size: 3em;
 }
 
+/* === Planet Background === */
+.planet {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    & img {
+        width: 50%;
+    }
+}
+
+/* == Gradient Background === */
+.gradient {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        315deg, 
+        var(--dark-grey) 40%, 
+        transparent 100%)
+}
+
 /* === Light Source over Page === */
 .light {
     position: fixed;
@@ -144,6 +167,7 @@ body {
 
     width: 100%;
     height: 100%;
+    z-index: 100;
 
     pointer-events: none;
     background: radial-gradient( 
@@ -247,12 +271,18 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: 50;
 }
 
 .students {
     padding: 1em;
     margin: 1em;
-    min-width: 25em;
 
-    background: var(--white);
+    & a {
+        color: var(--white);
+    }
 }
+
+/* === Z-Index Usage === */
+/* Light: 100 */
+/* List: 50 */
