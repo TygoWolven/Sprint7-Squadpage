@@ -13,8 +13,12 @@
 
   <ul class="student-list">
     <% persons.forEach(person => { %>
-      <li class="students"><a href="./person/<%= person.id %>"><%= person.name %> <br> <%= person.surname %>
-      </a></li>
+      <li class="students">
+        <div class="star"></div>
+        <a href="./person/<%= person.id %>">
+          <%= person.name %> <br> <%= person.surname %>
+        </a>
+      </li>
     <% }) %>
   </ul>
 </section>

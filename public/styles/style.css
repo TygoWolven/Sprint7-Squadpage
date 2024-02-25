@@ -218,6 +218,10 @@ body {
         transition: var(--tran1);
     }
 
+    & ul li a:hover {
+        text-decoration: underline;
+    }
+
     & hr {
         border-color: rgba(5, 5, 5, 0.4);
     }
@@ -254,17 +258,14 @@ h1 {
 }
 
 .students {
-    margin: 4em;
-    text-align: center;
-
-    height: 10px;
-    width: 10px;
-    background: lavender;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(200, 100, 200, 0.5);
+    position: relative;
+    margin: 5em;
 
     & a {
-        color: var(--white);
+        position: absolute;
+        top: 25px;
+
+        color: lavender;
         display: none;
     }
 }
@@ -273,6 +274,16 @@ h1 {
     & a{
         display: block;
     }
+}
+
+.star {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+
+    border-radius: 50%;
+    background: lavender;
+    box-shadow: 0 0 0 4px rgba(200, 100, 200, 0.5);
 }
 
 /* === Z-Index Usage === */
