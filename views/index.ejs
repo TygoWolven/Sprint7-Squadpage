@@ -1,5 +1,57 @@
 <%- include('./partials/head') %>
 
+<nav>
+  <div class="buttons">
+      <a href="#" id="menu-button">Filteren en sorteren</a>
+      <a href="#" id="message-menu-button">Berichten</a>
+  </div>
+
+  <div class="menu">
+    <div class="system">
+      <div class="filters">
+        <h2>Filteren op:</h2>
+        <ul>
+          <li><a href="#">Naam</a></li>
+          <hr>
+          <li><a href="#">Achternaam</a></li>
+          <hr>
+          <li><a href="#">Leeftijd</a></li>
+          <hr>
+          <li><a href="#">Squad</a></li>
+        </ul>
+      </div>
+      <div class="sorteringen">
+        <h2>Sorteren op:</h2>
+        <ul>
+          <li><a href="/?sort=name">Alfabet</a></li>
+          <hr>
+          <li><a href="#">Leeftijd</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="message-menu">
+      <div class="system">
+        <div class="messages">
+          <h2>Huidige berichten:</h2>
+          <ul>
+            <% messages.forEach(message => { %>
+              <li><%= message %></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+      <div class="submit-message">
+        <h2>Bericht:</h2>
+        <form method="post" action="/">
+          <textarea required name="bericht"></textarea> <br>
+          <button type="submit" id="submit-button">Versturen</button>
+        </form>
+      </div>
+  </div>
+</nav>
+
 <section class="start-page">
   <div>
     <h2>Laten we naar<br>de ruimte gaan!</h2>

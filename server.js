@@ -19,8 +19,13 @@ app.set('view engine', 'ejs')
 // Stel de map met ejs templates in
 app.set('views', './views')
 
+// Werken met request data wordt hiermee makkelijker
+app.use(express.urlencoded({extended: true}))
+
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'))
+
+const messages = [] 
 
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
@@ -34,13 +39,18 @@ app.get('/', function (request, response) {
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
 
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
-    response.render('index', {persons: apiData.data, squads: squadData.data})
+    response.render('index', {
+      persons: apiData.data, 
+      squads: squadData.data,
+      messages: messages
+    })
   })
 })
 
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
-  // Er is nog geen afhandeling van POST, redirect naar GET op /
+  messages.push(request.body.bericht)
+  
   response.redirect(303, '/')
 })
 
