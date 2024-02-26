@@ -1,9 +1,19 @@
 <%- include('./partials/head') %>
 
-<a href="/">Back</a>
+<a href="/" id="terug-button">Terug</a>
 
-<h2><%= person.name %></h2>
+<section class="student-detailed">
 
-<p>Squad: <%= person.squad_id %>
+    <h2><%= person.name %></h2>
+
+    <p>Squad: <%= person.squad_id %>
+
+</section>
+
+<div class="planet">
+  <img src="/images/saturn.png" alt="Saturnus on background">
+</div>
+<div class="gradient"></div>
+<div class="light"></div>
 
 <%- include('./partials/foot') %>

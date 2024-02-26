@@ -22,7 +22,11 @@
   <body>  
 
   <nav>
-    <a href="#" id="menu-button">Filteren en sorteren</a>
+    <div class="buttons">
+        <a href="#" id="menu-button">Filteren en sorteren</a>
+        <a href="#" id="message-menu-button">Berichten</a>
+    </div>
+
     <div class="menu">
       <div class="system">
         <div class="filters">
@@ -46,5 +50,24 @@
           </ul>
         </div>
       </div>
+    </div>
+
+    <div class="message-menu">
+        <div class="system">
+          <div class="submit-message">
+            <form action="">
+                <label for="">
+                    <input type="textarea">
+                </label>
+                <button type="submit">Versturen</button>
+            </form>
+          </div>
+          <div class="messages">
+            <h2>Huidige berichten:</h2>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </div>
     </div>
   </nav>
