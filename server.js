@@ -41,7 +41,7 @@ app.get('/', function (request, response) {
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
     response.render('index', {
       persons: apiData.data, 
-      squads: squadData.data,
+      squads: squadData.data, 
       messages: messages
     })
   })
@@ -59,7 +59,7 @@ app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
   fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
     // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
-    response.render('person', {person: apiData.data, squads: squadData.data})
+    response.render('person', {person: apiData.data, squads: squadData.data, messages: messages})
   })
 })
 
@@ -71,3 +71,25 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+app.get('/squad/:id', async function (request, response) {
+  try {
+    const squadId = request.params.id;
+    const sort = request.query.sort;
+
+    const squadData = await fetchJson(apiUrl + '/squad/' + squadId);
+
+    let personDataUrl = apiUrl + '/person?filter={"squad_id":' + squadId + '}';
+    if (sort) {
+      personDataUrl += `&sort=${sort}`;
+    }
+
+    const personData = await fetchJson(personDataUrl);
+
+    response.render('squad', { persons: personData.data, squad: squadData.data });
+  } catch (error) {
+    console.error('Error:', error);
+    response.status(500).send('Internal Server Error');
+  }
+});

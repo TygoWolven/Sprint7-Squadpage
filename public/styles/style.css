@@ -307,6 +307,16 @@ h1 {
     box-shadow: 0 0 0 4px rgba(200, 100, 200, 0.5);
 }
 
+.student-detailed {
+    position: relative;
+
+    & div {
+        position: absolute;
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
 /* === Z-Index Usage === */
 /* Start: 150 */
 /* Light: 100 */

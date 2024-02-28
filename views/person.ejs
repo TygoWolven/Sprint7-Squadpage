@@ -1,12 +1,16 @@
-<%- include('./partials/head2') %>
+<%- include('./partials/head') %>
 
 <a href="/" id="terug-button">Terug</a>
 
 <section class="student-detailed">
 
+  <div>
     <h2><%= person.name %></h2>
 
-    <p>Squad: <%= person.squad_id %>
+    <p>Squad: <%= person.squad_id %></p>
+    
+    <p> <%= person.avatar %> </p>
+  </div>
 
 </section>
 
