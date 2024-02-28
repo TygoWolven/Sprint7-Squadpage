@@ -264,6 +264,7 @@ h1 {
     right: 0;
     margin: 0 auto;
     z-index: 90;
+    width: fit-content;
 
     text-align: center;
     text-transform: uppercase;
