@@ -280,9 +280,9 @@ h1 {
 }
 
 .students {
-
     & a {
         color: lavender;
+        padding: 1em;
         display: none;
     }
 }

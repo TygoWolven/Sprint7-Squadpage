@@ -9,7 +9,7 @@
 
     <p>Squad: <%= person.squad_id %></p>
     
-    <p> <%= person.avatar %> </p>
+    <img src="<%= person.avatar.includes('https') ? person.avatar : '/images/person.png' %>" height="200px">
   </div>
 
 </section>
