@@ -28,7 +28,18 @@ function startAnimation () {
 }
 function startDissapearing () {
   startPage.classList.toggle('hideStartPageAnimation')
+  document.cookie = "checked"
 }
+
+// cookie system //
+ if(document.cookie){
+  document.querySelector('.start-page').style.display = "none"
+  console.log(document.cookie)
+ } else{
+  document.querySelector('.start-page').style.display = "flex"
+  console.log(document.cookie)
+ }
+ 
 
 // // Cursor Light //
 const positionCursor = document.documentElement;
