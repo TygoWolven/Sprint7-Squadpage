@@ -31,7 +31,7 @@ function startDissapearing () {
   document.cookie = "checked"
 }
 
-// cookie system //
+// Cookie System //
  if(document.cookie){
   document.querySelector('.start-page').style.display = "none"
   console.log(document.cookie)
@@ -47,6 +47,7 @@ positionCursor.addEventListener('mousemove', e =>{
   positionCursor.style.setProperty('--x', e.clientX + 'px')
   positionCursor.style.setProperty('--y', e.clientY + 'px')
 })
+
 
 // Random Star Locations //
 const windowHeight = window.innerHeight,
